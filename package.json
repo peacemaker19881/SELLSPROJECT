@@ -4,7 +4,8 @@
   "description": "used by Valens k in presentation",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "dev": "nodemon app.js"
   },
   "author": "VALENS K",
   "license": "ISC",
@@ -19,12 +20,14 @@
     "express": "^5.1.0",
     "express-session": "^1.18.2",
     "hbs": "^4.2.0",
+    "helmet": "^8.1.0",
     "joi": "^18.0.2",
     "morgan": "^1.10.1",
     "multer": "^2.0.2",
     "mysql2": "^3.15.3",
     "sequelize": "^6.37.7",
-    "sequelize-cli": "^6.6.3"
+    "sequelize-cli": "^6.6.3",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"

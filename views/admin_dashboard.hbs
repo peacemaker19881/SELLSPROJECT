@@ -1,0 +1,18 @@
+<h1>Pending Products</h1>
+<table>
+  <thead><tr><th>Title</th><th>Seller</th><th>Price</th><th>Action</th></tr></thead>
+  <tbody>
+    {{#each products}}
+      <tr>
+        <td>{{title}}</td>
+        <td>{{seller_id}}</td>
+        <td>{{price}}</td>
+        <td>
+          <form method="post" action="/admin/approve/{{productid}}">
+            <button type="submit">Approve</button>
+          </form>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

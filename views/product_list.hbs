@@ -1,0 +1,14 @@
+<h1>Products</h1>
+<div class="grid">
+  {{#each products}}
+  <div class="card">
+    <img src="{{image_url}}" alt="{{title}}" style="max-width:100%" />
+    <h3>{{title}}</h3>
+    <p>{{description}}</p>
+    <p>Price: {{price}}</p>
+    <form method="post" action="/payments/buy/{{productid}}">
+      <button type="submit">Buy</button>
+    </form>
+  </div>
+  {{/each}}
+</div>
