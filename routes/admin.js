@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const adminCtrl = require('../controllers/adminController');
-const { ensureAuth, ensureRole } = require('../utils/authMiddleware');
+const { ensureAuth, ensureRole } = require('../utils/authMinddleware');
 
 router.get('/pending-products', ensureAuth, ensureRole('admin'), adminCtrl.pendingProducts);
 router.post('/approve/:id', ensureAuth, ensureRole('admin'), adminCtrl.approveProduct);

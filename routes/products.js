@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const prodCtrl = require('../controllers/productController');
-const { ensureAuth, ensureRole } = require('../utils/authMiddleware');
+const { ensureAuth, ensureRole } = require('../utils/authMinddleware');
 
 router.get('/list', prodCtrl.listPublic);
 

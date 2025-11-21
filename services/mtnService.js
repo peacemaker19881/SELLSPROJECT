@@ -2,7 +2,7 @@
 // Implements: getAccessToken, requestToPay (Collection), disburse (Remittance/Disbursement)
 // Follow MTN docs to create API user and API key first (one-time).
 const axios = require('axios');
-const uuid = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 const SUBSCRIPTION_KEY = process.env.MTN_MOMO_SUBSCRIPTION_KEY;
 const API_USER_ID = process.env.MTN_API_USER_ID; // X-Reference-Id (UUID)
@@ -31,7 +31,7 @@ async function requestToPay(amount, currency, externalId, payerPhone, payerMessa
   const tokenResp = await getAccessToken();
   const token = tokenResp.access_token || tokenResp.accessToken || tokenResp;
   const url = `${BASE}/collection/v1_0/requesttopay`;
-  const referenceId = uuid.v4();
+  const referenceId = uuidv4();
   const headers = {
     'Authorization': `Bearer ${token}`,
     'X-Reference-Id': referenceId,
