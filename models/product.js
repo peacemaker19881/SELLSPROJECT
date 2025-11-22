@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-const Product = sequelize.define('Product', {
+const products = sequelize.define('products', {
 productid: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
 seller_id: { type: DataTypes.INTEGER, allowNull: false },
 title: DataTypes.STRING,
@@ -10,5 +10,5 @@ image_url: DataTypes.STRING,
 approved: { type: DataTypes.BOOLEAN, defaultValue: false },
 is_sold: { type: DataTypes.BOOLEAN, defaultValue: false }
 }, { tableName: 'products', timestamps: true });
-return Product;
+return products;
 };
